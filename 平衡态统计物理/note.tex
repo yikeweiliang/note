@@ -1,0 +1,65 @@
+\documentclass[a4paper, 10pt, openany]{book}%标注了文档类型和字号大小
+\usepackage{geometry}
+
+\geometry{left=3cm,right=3cm,top=3cm,bottom=3cm}
+
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{url} % 用于更好地格式化URL
+
+\titleformat{\section}[block]{\normalfont}{\thesection}{1em}{}
+\titleformat{\subsection}[block]{\normalfont}{\thesubsection}{1em}{}
+\titleformat{\chapter}[display]
+  {\normalfont\huge} % 设置章节标题的字体为正常字体（非加粗）
+  {Chapter \thechapter}{1em}{} % 保留 "Chapter" 和 章节编号
+
+\usepackage{xeCJK}
+\usepackage{footmisc}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath}
+\usepackage{subfigure}
+\usepackage[graphicx]{realboxes}
+
+
+
+\setCJKmainfont{FangSong}%中文设置为仿宋
+
+\setmainfont{Palatino Linotype}%英文设置为palatino linotype
+
+\begin{document}
+  \title{ \heiti 平衡态统计物理笔记}
+  \author{亦可}
+  \maketitle
+  \tableofcontents
+
+
+  \newpage
+
+  \chapter{写在前面/Foreword}
+  \chapter{热学回顾/Thermodynamics}
+
+  热学是唯象的，唯象的观点没有所谓对体系微观细节的认知，热力学定律基本来自实验和日常规律的总结。
+
+  统计物理和热力学研究的核心问题，总是假定体系处于平衡状态。它们没有办法回答“如何达到平衡态”的问题。
+
+\section{热平衡状态}
+平衡状态：体系的性质随着观察的时间的推移不发生变化。
+
+这是一个很tricky的说法。什么样的性质不随时间变化？如果我们试想一箱子气体，随着时间的推移，箱子中某一粒子的动量（或者位置）当然是随时变化的。因此，我们所谓的不随时间变化，实际上已经隐含了宏观测量的描述。测量的特征时间要比微观的运动时间长的多。我们测量的物理量一定是粗略的，缓慢的。
+
+对于一个宏观系统，其自由度当然是很多很多的，要完整地描述它需要极多的自由度。因此在我们所谓意义上的测量时，我们是提取了体系的一个特征来进行测量，即将一个高维的相空间简化为了一些简单的热力学变量来进行测量。这些热力学变量即是符合前述“缓慢的、粗略的”定义。
+
+有些热力学变量很直观，例如压强（描述了气体的力学特征），体积（描述了气体的几何特征）等。但这些特征并非热力学体系独有。那么，什么变量是跟“热”相关的特征量呢？我们当然已经知道这就是温度。
+
+\subsection{第零定律}
+
+考虑三个系统A，B与C。A与C热平衡，且B与C热平衡，则可以推出A与B热平衡。这就是第零定律。
+
+注意，我们并没有要求ABC三个系统的相态。不过为了简单起见，我们可以考虑三个系统均为气体。
+
+第零定律如何说明了温度的存在？
+
+A与C热平衡，说明存在一个函数$f_{ac}$，使得$f_{ac}(p_A,V_A,p_C,V_C)=0$，同理存在$f_{bc}(p_B,V_B,p_C,V_C)=0$
+
+
+\end{document}
