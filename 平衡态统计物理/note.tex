@@ -2,7 +2,7 @@
 \usepackage{geometry}
 
 \geometry{left=3cm,right=3cm,top=3cm,bottom=3cm}
-
+\usepackage[T1]{fontenc}
 \usepackage{titlesec}
 \usepackage{hyperref}
 \usepackage{url} % 用于更好地格式化URL
@@ -59,7 +59,81 @@
 
 第零定律如何说明了温度的存在？
 
-A与C热平衡，说明存在一个函数$f_{ac}$，使得$f_{ac}(p_A,V_A,p_C,V_C)=0$，同理存在$f_{bc}(p_B,V_B,p_C,V_C)=0$
+A与C热平衡，说明存在一个函数$f_{ac}$，使得$f_{AC}(p_A,V_A,p_C,V_C)=0$，同理存在$f_{BC}(p_B,V_B,p_C,V_C)=0$
+
+改写一下，可以写为：$V_C=F_{AC}(p_A,V_A,p_C)=F_{BC}(p_B,V_B,p_C)$
+
+第零定律表明，如果有上式成立，则有$f_{AB}(p_A,V_A,p_B,V_B)=0$，即上推下。因此上式必可以约去$p_C$，因此有$g_1(p_A,V_A)=g_2(p_B,V_B)$，此时$g$即温度函数。
+
+注意此时的$g$即物态方程。
+
+eg1.理想气体的物态方程：$pV=Nk_BT$，其中$N$为粒子数。
+
+eg2.范德瓦尔斯气体的物态方程：
+$$(p+\frac{a}{v^2})(v-b)=k_BT$$，其中$v=\frac{V}{N}$
+
+把理想气体作为测温物质（因为其状态方程简单）（即C系统），可以定义温标。
+
+$$T=273.16\frac{pV_{input}}{pV_{triple}}$$
+\subsection{第一定律}
+关于Wall，“绝热”：系统与系统之间没有热交换。“透热”：系统之间存在热交换。“孤立”：外界不能对系统做任何事。item
+
+第一定律：一个绝热的系统（改变状态的方式只有做功），从不同的做功路径，使系统从同初态到同末态，需要的功相同。
+
+第一定律说明存在内能这个物理量（因为稳定的做功说明存在稳定的能量差），定义内能为$W=U(p_2,V_2)-U(p_1,V_1)$
+
+如果wall变成透热的，则上式不成立。差在哪里？定义热量交换$Q=U_2-U_1-W$
+
+即$\Delta U=W+Q$
+
+无穷小形式$dU=\text{\dj}W+\text{\dj}Q$，这与路径相关。
+
+我们希望给$\text{\dj}W$和$\text{\dj}Q$一个用系统参量表示的表达式。我们来讨论关于$W$的过程量的表达式，为此，我们需要引入准静态过程的概念。
+
+准静态过程：slow enough以至于在系统变化的任意时刻始终保持平衡状态。
+
+在准静态过程下，有$\text{\dj}W=-pdv$
+
+更一般的情况下，有$$\text{\dj}W=\sum_{i=0}^nF_i\cdot dx_i$$
+
+其中，$F$是强度量，$x$为广延量（随体系的尺寸改变而改变）。
+
+定义热容：体系升高一度所需要的热量。
+
+$C=\frac{\text{\dj}Q}{dT}$
+
+注意热容是一个实验可测的量，许多物理问题都源于此。
+
+注意其中吸热是依赖过程的量，所以热容也是依赖过程的。常用的热容有$C_v$和$C_p$，记录两个表达式
+
+$C_v=\frac{\partial U}{\partial T}_v$
+
+$C_p=\frac{dU+pdV}{dT}_p=\frac{\partial U}{\partial T}_p+p\frac{\partial V}{\partial T}_p$
+
+理想气体的绝热自由膨胀：该实验可以得到$U_{ig}=U_{ig}(T)$
+
+因此理想气体有$C_p-C_v=p\frac{\partial V}{\partial T}_p=Nk_B$
+
+\subsection{第二定律}
+对第二定律的探索来源于热机。围绕热机效率的研究催生了第二定律的表述。
+
+热机：高温热源+热机主体（向外做功）+向低温处放热
+
+注意，高温热源并不一定要具有特定温度。循环中所有吸热的点都被认为处在高温热源。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \end{document}
