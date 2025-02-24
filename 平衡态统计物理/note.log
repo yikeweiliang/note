@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.23)  24 FEB 2025 09:28
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.23)  24 FEB 2025 20:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -682,22 +682,17 @@ Chapter 1.
 
 ]
 Chapter 2.
-
-Overfull \hbox (28.18138pt too wide) in paragraph at lines 62--63
-[]\TU/PalatinoLinotype(0)/m/n/10 A \TU/FangSong(0)/m/n/10 与 \TU/PalatinoLinotype(0)/m/n/10 C \TU/FangSong(0)/m/n/10 热 平 衡，|  说 明 存 在 一 个 函 数 $\OML/cmm/m/it/10 f[]$\TU/FangSong(0)/m/n/10 ，|  使 得 $\OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 p[]; V[]; p[]; V[]\OT1/cmr/m/n/10 ) = 0$\TU/FangSong(0)/m/n/10 ，|  同 理 存 在 $\OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 p[]; V[]; p[]; V[]\OT1/cmr/m/n/10 ) =
- []
-
 [4
 
 ]
 LaTeX Font Info:    Font shape `TU/PalatinoLinotype(0)/m/sl' in size <10> not available
-(Font)              Font shape `TU/PalatinoLinotype(0)/m/it' tried instead on input line 139.
+(Font)              Font shape `TU/PalatinoLinotype(0)/m/it' tried instead on input line 133.
 
 
 LaTeX Font Warning: Font shape `TU/FangSong(0)/m/sl' undefined
-(Font)              using `TU/FangSong(0)/m/n' instead on input line 139.
+(Font)              using `TU/FangSong(0)/m/n' instead on input line 133.
 
-[5] (./note.aux)
+[5] [6] [7] (./note.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
@@ -707,15 +702,15 @@ L3 programming layer <2022/07/14>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `note.out' has not changed.
-(rerunfilecheck)             Checksum: 2DAE68078F157E4241CE7F4285BFFF72;643.
+(rerunfilecheck)             Checksum: 7871E0E3C71B08E01162E4FEBF04CC49;1082.
  ) 
 Here is how much of TeX's memory you used:
- 16194 strings out of 474772
- 350341 string characters out of 5761268
- 1939842 words of memory out of 5000000
- 38079 multiletter control sequences out of 15000+600000
- 567277 words of font info for 98 fonts, out of 8000000 for 9000
+ 16213 strings out of 474772
+ 350991 string characters out of 5761268
+ 1938842 words of memory out of 5000000
+ 38095 multiletter control sequences out of 15000+600000
+ 567301 words of font info for 101 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 74i,6n,88p,287b,370s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,8n,88p,287b,370s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on note.pdf (5 pages).
+Output written on note.pdf (7 pages).
