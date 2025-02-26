@@ -16,11 +16,11 @@
 \contentsline {subsection}{\numberline {2.3.1}拉格朗日关系}{10}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}牛顿第二定律导出拉氏方程}{10}{subsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.3.3}普通有势体系下的拉氏方程}{11}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}拉格朗日量的性质}{11}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.4}拉格朗日量的性质}{12}{subsection.2.3.4}%
 \contentsline {subsection}{\numberline {2.3.5}非惯性系力学}{12}{subsection.2.3.5}%
 \contentsline {subsection}{\numberline {2.3.6}广义有势体系}{12}{subsection.2.3.6}%
 \contentsline {subsection}{\numberline {2.3.7}守恒量}{13}{subsection.2.3.7}%
-\contentsline {subsection}{\numberline {2.3.8}非完整约束下的拉氏方程}{13}{subsection.2.3.8}%
+\contentsline {subsection}{\numberline {2.3.8}非完整约束下的拉氏方程}{14}{subsection.2.3.8}%
 \contentsline {subsection}{\numberline {2.3.9}耗散}{14}{subsection.2.3.9}%
 \contentsline {subsection}{\numberline {2.3.10}拉格朗日方程推导牛顿运动定律}{14}{subsection.2.3.10}%
 \contentsline {section}{\numberline {2.4}有心运动}{15}{section.2.4}%
@@ -28,7 +28,7 @@
 \contentsline {subsection}{\numberline {2.4.2}比奈公式}{16}{subsection.2.4.2}%
 \contentsline {subsection}{\numberline {2.4.3}伯特兰定理}{16}{subsection.2.4.3}%
 \contentsline {subsection}{\numberline {2.4.4}天体运动}{17}{subsection.2.4.4}%
-\contentsline {subsection}{\numberline {2.4.5}第一、二、三宇宙速度}{17}{subsection.2.4.5}%
+\contentsline {subsection}{\numberline {2.4.5}第一、二、三宇宙速度}{18}{subsection.2.4.5}%
 \contentsline {subsection}{\numberline {2.4.6}限制型三体运动}{18}{subsection.2.4.6}%
 \contentsline {subsection}{\numberline {2.4.7}散射}{18}{subsection.2.4.7}%
 \contentsline {section}{\numberline {2.5}小振动}{19}{section.2.5}%

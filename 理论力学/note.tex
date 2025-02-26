@@ -191,7 +191,7 @@ After completing this chapter, you can claim to have studied theoretical mechani
     \textbf{r}_i=\textbf{r}_i(q_j,t)
    \end{equation}
 
-   以及它的微分形式：
+   以及它的微分形式：\footnote{我知道Einstein求和约定很酷，但我们全笔记拒绝使用Einstein求和约定。}
 
    \begin{equation}
     \mathrm{d}\textbf{r}_i=\frac{\partial \textbf{r}_i}{\partial t}\mathrm{d}t+\sum_{j=1}^s \frac{\partial \textbf{r}_i}{\partial q_j}\mathrm{d}q_j
@@ -257,7 +257,7 @@ After completing this chapter, you can claim to have studied theoretical mechani
     \sum_{j=1}^m Q_j \delta q_j=0
    \end{equation}
    
-   称为广义力。(2.19)是广义力形式下的虚功原理。完整约束下，$\delta q_j $相互独立，因此为了使(2.19)式成立，应有：
+   $Q_j$称为广义力。\footnote{请注意，广义力是力和坐标的偏导点乘的结果，因此它不一定仍然具有力的量纲，但有一点肯定的是，广义力与对应坐标维度上虚位移的乘积一定具有能量的量纲。}(2.19)是广义力形式下的虚功原理。完整约束下，$\delta q_j $相互独立，因此为了使(2.19)式成立，应有：
    \begin{equation}
      Q_j=0,j=1,\dots,m
    \end{equation}
@@ -280,47 +280,79 @@ After completing this chapter, you can claim to have studied theoretical mechani
    \subsection{达朗贝尔原理}
    系统处于非平衡状态时，由牛顿第二定律有：
    \begin{equation}
-    \sum_{i=1}^n (\textbf{F}_i-m\textbf{a}_i)=0
+   \textbf{F}_i-m\textbf{a}_i=0
    \end{equation}
-    点乘虚位移有：
+
+   上面的式子对体系中每个质点都成立。因此，类似于虚功原理，我们可以构建达朗贝尔原理（注意这个式子不需要任何约束类别限制，是动力学普遍方程）：
+    
     \begin{equation}
     \sum_{i=1}^n (\textbf{F}_i-m\textbf{a}_i)\cdot \delta \textbf{r}_i=0
     \end{equation}
-    此即达朗贝尔原理，可以写成广义力形式。
+    
+实际上，达朗贝尔原理并没有那么实用。笔者认为，它更像是为了推导拉格朗日方程而做的铺垫准备，因此这里并不花篇幅去介绍达朗贝尔原理。
+
+
     \section{拉格朗日方程}
     \subsection{拉格朗日关系}
-    拉格朗日关系的前提是完整约束。这里不加证明地给出两个拉格朗日关系：
+    拉格朗日关系是为了推导拉格朗日方程做的数学准备。(2.25)和(2.26)分别为第一和第二拉格朗日关系。
     \begin{equation}
         \frac{\partial \textbf{r}_i}{\partial q_j}=\frac{\partial \dot{\textbf{r}}_i}{\partial \dot{q}_j}
     \end{equation}
-    以及
+    
     \begin{equation}
-        \frac{\partial \dot{\textbf{r}}_i}{\partial q_j}=\frac{d}{dt}\frac{\partial \textbf{r}_i}{\partial q_j}
+        \frac{\partial \dot{\textbf{r}}_i}{\partial q_j}=\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial \textbf{r}_i}{\partial q_j}
     \end{equation}
+
+第一拉格朗日关系的推导：
+\begin{equation}
+\frac{\partial \dot{\textbf{r}}_i}{\partial \dot{q}_j}=\frac{\partial}{\partial \dot{q}_j}\left(\frac{\partial {\textbf{r}}_i}{\partial t}+\sum_{k=1}^m\frac{\partial \textbf{r}_i}{\partial q_k}\dot{q}_k\right)=\frac{\partial \textbf{r}_i}{\partial q_j}
+\end{equation}
+
+第二拉格朗日关系的推导：
+\begin{equation}
+\frac{\partial \dot{\textbf{r}}_i}{\partial {q}_j}=\frac{\partial}{\partial q_j}\left(\frac{\partial {\textbf{r}}_i}{\partial t}+\sum_{k=1}^m\frac{\partial \textbf{r}_i}{\partial q_k}\dot{q}_k\right)=\frac{\partial}{\partial t}\frac{\partial \textbf{r}_i}{\partial q_j}+\sum_{k=1}^m\frac{\partial}{\partial q_k}\left(\frac{\partial \textbf{r}_i}{\partial q_k}\right)\dot{q_k}=\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial \textbf{r}_i}{\partial q_j}
+\end{equation}
     \subsection{牛顿第二定律导出拉氏方程}
-    牛顿第二定律+完整约束有：
-    $$\textbf{F}_i=m_i\textbf{a}_i$$
-    有：
-    $$\sum_{i=1}^n m_i \ddot{\textbf{r}}_i\cdot \delta \textbf{r}_i=\sum_{i=1}^n m_i (\frac{d}{dt}(\dot{\textbf{r}}_i\cdot \delta \textbf{r}_i)-\dot{\textbf{r}}_i\cdot \frac{d}{dt} \delta \textbf{r}_i)$$
-    结合(5)式有
-    $$\sum_{i=1}^n m_i \ddot{\textbf{r}}_i\cdot \delta \textbf{r}_i=\sum_{i=1}^n m_i (\frac{d}{dt}(\dot{\textbf{r}}_i\cdot (\sum_{j=1}^s \frac{\partial \textbf{r}_i}{\partial q_j}\delta q_j))-\dot{\textbf{r}}_i\cdot \frac{d}{dt} (\sum_{j=1}^s \frac{\partial \textbf{r}_i}{\partial q_j}\delta q_j))$$
-    使用两类拉格朗日关系有
-    $$\sum_{i=1}^n m_i \ddot{\textbf{r}}_i\cdot \delta \textbf{r}_i=\sum_{i=1}^n m_i (\frac{d}{dt}(\dot{\textbf{r}}_i\cdot (\sum_{j=1}^s \frac{\partial \dot{\textbf{r}}_i}{\partial \dot{q}_j}\delta q_j))-\dot{\textbf{r}}_i\cdot (\sum_{j=1}^s \frac{\partial \dot{\textbf{r}}_i}{\partial q_j}\delta q_j))$$
-    将r点乘放进去有
-    $$\sum_{i=1}^n m_i \ddot{\textbf{r}}_i\cdot \delta \textbf{r}_i=\frac{1}{2}\sum_{i=1}^n m_i (\frac{d}{dt} (\sum_{j=1}^s \frac{\partial (\dot{\textbf{r}}_i\cdot\dot{\textbf{r}}_i)}{\partial \dot{q}_j}\delta q_j)- (\sum_{j=1}^s \frac{\partial (\dot{\textbf{r}}_i\cdot\dot{\textbf{r}}_i)}{\partial q_j}\delta q_j))$$
-    定义：
+    从式(2.24)出发，我们可以进行如下的推导：
+
     \begin{equation}
-        T=\sum_{i=1}^n \frac{1}{2}m_i\sum_{j=1}^s \dot{\textbf{r}}^2_i
+    \textbf{func}=\sum_{i=1}^n(\textbf{F}_i-m\ddot{\textbf{r}}_i)\cdot\delta\textbf{r}_i=\sum_{j=1}^mQ_j\delta q_j-\sum_{i=1}^n m_i (\frac{\mathrm{d}}{\mathrm{d}t}(\dot{\textbf{r}}_i\cdot \delta \textbf{r}_i)-\dot{\textbf{r}}_i\cdot \frac{\mathrm{d}}{\mathrm{d}t} \delta \textbf{r}_i)=0
     \end{equation}
-    则即有：
+    
+    将虚位移的表达式代入，我们就可以得到：
     \begin{equation}
-        \sum_{i=1}^n m_i \ddot{\textbf{r}}_i\cdot \delta \textbf{r}_i=\sum_{j=1}^s(\frac{d}{dt}\frac{\partial T}{\partial \dot{q}_j}-\frac{\partial T}{\partial q_j})\delta q_j=\sum_{j=1}^s Q_j\delta q_j
+    \textbf{func}=\sum_{j=1}^{m}Q_j\delta_j-\sum_{i=1}^n m_i (\frac{\mathrm{d}}{\mathrm{d}t}(\dot{\textbf{r}}_i\cdot (\sum_{j=1}^m \frac{\partial \textbf{r}_i}{\partial q_j}\delta q_j))-\dot{\textbf{r}}_i\cdot \frac{\mathrm{d}}{\mathrm{d}t} (\sum_{j=1}^m \frac{\partial \textbf{r}_i}{\partial q_j}\delta q_j))=0
     \end{equation}
-    因为是完整约束，故有：
+    
+    使用两类拉格朗日关系，我们就可以得到：
     \begin{equation}
-        \frac{d}{dt}\frac{\partial T}{\partial \dot{q}_j}-\frac{\partial T}{\partial q_j}=Q_j,j=1,\dots,s
+      \textbf{func}=\sum_{j=1}^{m}Q_j\delta_j-\sum_{i=1}^n m_i (\frac{\mathrm{d}}{\mathrm{d}t}(\dot{\textbf{r}}_i\cdot (\sum_{j=1}^m \frac{\partial \dot{\textbf{r}}_i}{\partial \dot{q}_j}\delta q_j))-\dot{\textbf{r}}_i\cdot (\sum_{j=1}^m \frac{\partial \dot{\textbf{r}}_i}{\partial q_j}\delta q_j))=0
     \end{equation}
-    这就是完整约束形式下的拉格朗日方程。
+
+    将r点乘放进去，我们就可以得到：
+    \begin{equation}
+      \textbf{func}=\sum_{j=1}^{m}Q_j\delta_j-\frac{1}{2}\sum_{i=1}^n m_i (\frac{\mathrm{d}}{\mathrm{d}t} (\sum_{j=1}^m \frac{\partial (\dot{\textbf{r}}_i\cdot\dot{\textbf{r}}_i)}{\partial \dot{q}_j}\delta q_j)- (\sum_{j=1}^m \frac{\partial (\dot{\textbf{r}}_i\cdot\dot{\textbf{r}}_i)}{\partial q_j}\delta q_j))=0
+    \end{equation}
+    
+    我们定义动能的表达式（实际上这和普物中的动能是相同的）：
+    \begin{equation}
+        T=\sum_{i=1}^n \frac{1}{2}m_i\sum_{j=1}^m \dot{\textbf{r}}^2_i
+    \end{equation}
+
+    于是我们就得到：
+    \begin{equation}
+        \textbf{func}=\sum_{j=1}^m \left(Q_j-\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial T}{\partial \dot{q}_j}+\frac{\partial T}{\partial q_j}\right)\delta q_j=0   
+          \end{equation}
+    
+          请注意，直到这里，我们还没有对约束提出要求，因此，直到上面这个方程，都是普适的方程。
+    
+          当体系中所有的约束都是理想约束时，上式中的$Q_j$可以简化为$Q_j^A$；当体系中所有约束均为完整约束时，我们就得到：
+
+    \begin{equation}
+        \frac{d}{dt}\frac{\partial T}{\partial \dot{q}_j}-\frac{\partial T}{\partial q_j}=Q_j,j=1,\dots,m
+    \end{equation}
+
+    这就是完整约束形式下的拉格朗日方程（组！）。
     分析：拉格朗日方程组有$s$个方程，对应$s$个广义坐标每一个坐标轴上都有一个广义力。对于这些广义力，我们可以剥离掉满足理想约束的约束力，这是因为：
     $$\sum_{j=1}^s Q^D_j\delta q_j=0$$
     于是我们得到：
