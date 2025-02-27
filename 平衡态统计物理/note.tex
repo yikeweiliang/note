@@ -350,9 +350,10 @@ C_p=\left(\frac{\partial H}{\partial T}\right)_p
 \end{equation}
 
 其中，我们要求过程$w$是可逆的。如果路径是不可逆的，我们就有：
-\begin{equation}
-\Delta S_{if}>\int_i^f\frac{\text{\dj}Q}{T}
-\end{equation}
+\begin{align}
+\Delta S_{if}>\int_i^f\frac{\text{\dj}Q}{T}\\
+\text{\dj}Q<T\mathrm{d}S
+\end{align}
 
 到这个时候，热力学第一定律的微分形式终于可以完全依靠状态量来表出：
 
@@ -379,6 +380,8 @@ T=\left(\frac{\partial U}{\partial S}\right)_{V,N}\\
 \subsection{熵增加原理}
 考虑一个绝热过程。如果这个绝热过程是可逆的，显然我们可以得到$\Delta S_{if}=0$，如果该绝热过程是不可逆的，根据(2.38)，我们得到$\Delta S_{if}>0$。
 
+从这里我们可以推知，第一，一个孤立系统的熵不会减少；第二，随着原本加诸于一个系统的约束被释放，系统会朝着熵增加或至少熵不变的方向移动。至于熵是否真的增加，要取决于过程是否可逆。
+
 \noindent 例1：理想气体的绝热自由膨胀
 
 \noindent 例2：固体的热传导
@@ -389,14 +392,45 @@ T=\left(\frac{\partial U}{\partial S}\right)_{V,N}\\
 U=U_1+U_2+U_{bt}
 \end{equation}
 
-其中$U_{bt}$是两部分粒子之间的相互作用能。
+其中$U_{bt}$是两部分粒子之间的相互作用能。但是实际操作（即热力学极限下）中，我们总是有 $U_{bt}=0$ 。这有两个条件：
+ \begin{itemize}
+  \item 体系处于热力学极限下（$N$无穷）；很显然，当体系中个体的数量较少时，即使粒子数密度保持和无穷多粒子体系的数密度相同，体系间的相互作用能也是不可忽略的。因此趋于无穷的粒子数密度是必要的。
+\item 内能表示的相互作用是短程相互作用。$U_1$和$U_2$显然是正比于体系的体积的。但$U_{bt}$显然是正比于接触面积（只有当相互作用是短程相互作用的时候才成立）。也正因此，我们可以放心地忽略体系间的相互作用能。
+ \end{itemize}
 
+数学上，$U$的广延性可以表示为：
+\begin{equation}
+  U(\lambda S,\lambda N,\lambda V)=\lambda U(S,N,V)
+\end{equation}
 
+ 也就是说，$U$是$S,N,V$的齐次函数。两侧同时对$\lambda$求导并代入$\lambda=1$，我们就得到：
+ \begin{equation}
+  \frac{\partial U}{\partial S}S+\frac{\partial U}{\partial N}N+\frac{\partial U}{\partial V}V=U
+ \end{equation}
 
+因此我们就得到：
+\begin{equation}
+  U=TS-PV+\mu N
+\end{equation}
 
+但是，这时候如果我们再取$U$的微分，我们就得到：
+\begin{equation}
+  \mathrm{d}U=T\mathrm{d}S+S\mathrm{d}T-P\mathrm{d}V-V\mathrm{d}P+\mu\mathrm{d}N+N\mathrm{d}\mu
+\end{equation}
 
+这是从$U$的广延性导出的，为了和前面推导出的内能微分表达式保持统一，我们必须承认有：
+\begin{equation}
+  S\mathrm{d}T-V\mathrm{d}P+N\mathrm{d}\mu=0
+\end{equation}
 
+改写这个方程，我们就得到：
+\begin{equation}
+  \mu=\frac{V}{N}\mathrm{d}P-\frac{S}{N}\mathrm{d}T\end{equation}
 
+这实际上是说明，三个强度量之间并不是独立的。实际上，如果你足够有逆反心理，在(2.41)式时就会对这种说法提出质疑：为什么内能偏偏以这三个量作为函数变量？实际上，内能函数的变量选取确实不是唯一的（只要是三个独立的变量就可以）。之所以选择$S,V,N$，只是因为一方面，这三个都是广延量，有助于我们后面的推导；另外，这三个都作为微分出现在了内能微分的表达式中，方便我们自然地推导出下面的偏导关系。
 
+不过，经过内能广延性的讨论，我们已经知道，至少$P,T,\mu$三个强度量不是相互独立的。
+
+从物理的角度，这实际上也是合理的。因为我完全可以在保证强度量不变的前提下，多加一些气体，这时候内能显然会跟着改变。也就是说，要得到一个作为广延量的内能的值，我们至少要知道一个广延量作为“数量”的量度。
 
 \end{document}
