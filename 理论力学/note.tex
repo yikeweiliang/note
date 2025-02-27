@@ -349,46 +349,52 @@ After completing this chapter, you can claim to have studied theoretical mechani
           当体系中所有的约束都是理想约束时，上式中的$Q_j$可以简化为$Q_j^A$；当体系中所有约束均为完整约束时，我们就得到：
 
     \begin{equation}
-        \frac{d}{dt}\frac{\partial T}{\partial \dot{q}_j}-\frac{\partial T}{\partial q_j}=Q_j,j=1,\dots,m
+        \frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial T}{\partial \dot{q}_j}-\frac{\partial T}{\partial q_j}=Q_j,j=1,\dots,m
     \end{equation}
 
     这就是完整约束形式下的拉格朗日方程（组！）。
-    分析：拉格朗日方程组有$s$个方程，对应$s$个广义坐标每一个坐标轴上都有一个广义力。对于这些广义力，我们可以剥离掉满足理想约束的约束力，这是因为：
-    $$\sum_{j=1}^s Q^D_j\delta q_j=0$$
-    于是我们得到：
-    \begin{equation}
-      \frac{d}{dt}\frac{\partial T}{\partial \dot{q}_j}-\frac{\partial T}{\partial q_j}=Q_j^A,j=1,\dots,s
-    \end{equation}
+    
     \subsection{普通有势体系下的拉氏方程}
-    普通有势体系中，势能造成的力形如:
-    $$\textbf{F}=\textbf{F}(\textbf{r})$$
-    此时可以存在势能函数满足
-    $$\textbf{F}=-\nabla V(\textbf{r})$$
-    此时我们得到：
-    $$Q_j=-\frac{\partial V}{\partial q_j}$$
+
+    很多时候，力的表达式满足某些特征，其中最重要的特征就是力只与位置矢量相关。这种情况下，我们就可以定义势能。（例如重力势能，引力势能等等）普通有势体系中，势能造成的力形如:
+
+    \begin{equation}\textbf{F}=\textbf{F}(\textbf{r},t)\end{equation}
+    
+    此时可以存在势能函数满足：
+    \begin{equation}\textbf{F}=-\nabla V(\textbf{r},t)\end{equation}
+    
+    请注意，势能函数是可以含时的。这是因为坐标的变换方程可能含时。当你从一组坐标变换到另一组坐标时，可能就会使得势能函数中出现时间项。但是，在广义力的维度下，我们总是可以得到：
+    \begin{equation}Q_j=-\frac{\partial V}{\partial q_j}\end{equation}
+    
     定义拉格朗日量：
     $$L=T-V$$
-    我们得到完整约束，理想约束，有势体系下的拉氏方程：
+    
+    我们得到完整约束，有势体系下的拉氏方程：
     \begin{equation}
-      \frac{d}{dt}\frac{\partial L}{\partial \dot{q}_j}-\frac{\partial L}{\partial q_j}=0
+      \frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial L}{\partial \dot{q}_j}-\frac{\partial L}{\partial q_j}=0
     \end{equation}
-    其中$L=L(q_j,\dot{q}_j,t)$
-    注意：得到这个方程的起点是惯性系，因此该拉氏方程需要在惯性系写出。
-    \subsection{拉格朗日量的性质}
+
+    其中$L=L(q_j,\dot{q}_j,t)$。
+    注意：得到这个方程的起点是惯性系，因此该拉氏方程需要在惯性系写出。相比于(2.35)式，(2.39)彻底脱离了力的概念，完全用能量来描述方程，因此具有更广泛的推广性。
+    \section{拉格朗日量的性质}
     i）描述同一个运动的拉格朗日量可以相差一个常微分，即：
     \begin{equation}
-      L^{\prime}=L+\frac{d}{dt}u(q_j,t)
+      L^{\prime}=L+\frac{\mathrm{d}}{\mathrm{d}t}u(q_j,t)
     \end{equation}
-    可知，常数项，仅与时间有关的项等等都不影响运动的形式。
 
-    ii）描述同一个运动的拉氏量可以相差一个因子。可以推导出，如果势能项是$\textbf{r}$的$k$阶齐次函数，作变换$t^\prime=\alpha t，\textbf{r}^\prime=\beta\textbf{r}$,则有
+    这个性质很好被证明，只要把$L^\prime$代入拉格朗日方程你就会明白这个性质的道理。由这个性质
+    可知，常数项，仅与时间有关的项等等都不影响运动的形式。实际操作中如何使用这个性质呢？一般来说，只要一个式子能够对$\mathrm{d}t$积分成$u(q_j,t)$的形式，那我们就可以将它添加到拉氏量中（或从拉氏量中删掉它）而不用担心这是否会导致新的拉氏量与之前的拉氏量描述的体系是否存在区别。
+
+    ii）描述同一个运动的拉氏量可以相差一个因子。可以推导出，如果势能项是$\textbf{r}$的$k$阶齐次函数，作变换$t^\prime=\alpha t, \textbf{r}^\prime=\beta\textbf{r}$,则有
     $$L^\prime=(\frac{\beta}{\alpha})^2T-\beta^kV$$
+    
     若要求二者描述的是同一运动形式，应有：
     $$\alpha=\beta^{1-\frac{k}{2}}$$
+    
     一般来说，$k$是已知的，由力的形式给出，我们可以根据$k$的值来确定系统的力学相似性。
     
-    iii）可叠加性
-    \subsection{非惯性系力学}
+    
+    \section{非惯性系力学}
     一个普通有势体系从惯性系$K$系换到非惯性系$K^{\prime}$系，其势能函数必然会有变化如：
     $$\Phi^{\prime}(\textbf{r}^\prime)=\Phi(\textbf{r}^\prime+\textbf{X}),\textbf{X}=\textbf{OO}^\prime$$
     $K$系下的拉氏量：
@@ -403,28 +409,43 @@ After completing this chapter, you can claim to have studied theoretical mechani
     $$L^{\prime\prime}=\frac{m}{2}((\dot{\textbf{r}}^{\prime \prime}+\Omega\times \textbf{r}^{\prime\prime})^2-2\ddot{\textbf{X}}\cdot \textbf{r}^{\prime \prime})-\Phi(\textbf{r}^{\prime\prime}+\textbf{X})$$
     整理得到：
     $$L^{\prime\prime}=\frac{m}{2}(\dot{\textbf{r}}^{\prime \prime2}+(\Omega\times \textbf{r}^{\prime \prime})^2+2(\Omega\times\textbf{r}^{\prime\prime})\cdot\dot{\textbf{r}}^{\prime\prime}-2\ddot{\textbf{X}}\cdot \textbf{r}^{\prime \prime})-\Phi(\textbf{r}^{\prime\prime}+\textbf{X})$$
-    \subsection{广义有势体系}
-    $$U=U(t,q_j,\dot{q}_j)$$
-    如果某个力$F$可以被表示为：
-    $$Q_j=-\frac{\partial U}{\partial q_j}+\frac{d}{dt}\frac{\partial U}{\partial \dot{q}_j}$$
-    此时$U$仍然满足拉氏方程，即此时仍可以有$L=T-U$
+    \section{广义有势体系}
+
+    从前面的内容可以看出，一般来说，势能只能够写成位移$\textbf{r}$和时间$t$的函数。但是，如果拉格朗日方程(2.35)中的广义力满足：
+    
+    \begin{equation}Q_j=-\frac{\partial U}{\partial q_j}+\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial U}{\partial \dot{q}_j}
+    \end{equation}
+
+    请注意比对这个方程与(2.38)之间的相似之处。(2.38)式实际上属于上式的一个特例。很显然，既然上式中我们引入了$U$对$\dot{q}_j$的偏导，那么这里的$U$一定也是$\dot{q}_j$的函数。我要表达的是，如果能找到一个$U$，使得$m$个维度上的广义力满足(2.41)式，那么这个$U$也可以类似势能$V$放入拉格朗日方程中，此时$U$被称为广义势能。
+
+
+    总之大致意思就是，我们放宽了对“可以用一个能够融进拉格朗日方程的势能函数来表示的力”的要求，现在，我们可以把一些原本不能写成势能的力改写成势能并融进拉格朗日方程中。
+    
     例如：洛伦兹力
     $$\textbf{F}=e\textbf{E}+e\textbf{v}\times\textbf{B}$$
+    
     我们来证明此时存在一个广义势可以满足上述性质，定义$\phi,\textbf{A}$使得
     $$\textbf{E}=-\nabla\phi-\frac{\partial \textbf{A}}{\partial t}$$
     $$\textbf{B}=\nabla\times\textbf{A}$$
+    
     此时有
     $$\textbf{F}=(-e\nabla\phi-e\frac{\partial \textbf{A}}{\partial t})+e\textbf{v}\times(\nabla\times\textbf{A})$$
+    
     其中有：
     $$(\textbf{v}\times(\nabla\times\textbf{A}))_x=v_y(\frac{\partial A_y}{\partial x}-\frac{\partial A_x}{\partial y})-v_z(\frac{\partial A_x}{\partial z}-\frac{\partial A_z}{\partial x})=\frac{\partial}{\partial x}(v_iA_i)-(v_i\frac{\partial}{\partial x_i})A_x$$
+    
     即有：
     $$\textbf{v}\times(\nabla\times\textbf{A})=\nabla(\textbf{v}\cdot\textbf{A})-(\textbf{v}\cdot\nabla)\textbf{A}$$
+    
     则即：
     $$\textbf{F}=(-e\nabla\phi-e\frac{\partial \textbf{A}}{\partial t})+e(\nabla(\textbf{v}\cdot\textbf{A})-(\textbf{v}\cdot\nabla)\textbf{A})$$
+    
     整理：
     $$\textbf{F}=(-e\nabla(\phi-\textbf{v}\cdot\textbf{A})-e\frac{\partial \textbf{A}}{\partial t})-e(\textbf{v}\cdot\nabla)\textbf{A}$$
+    
     此时，有：
     $$\textbf{F}=-e\nabla(\phi-\textbf{v}\cdot\textbf{A})-e\frac{d \textbf{A}}{d t}=-e\nabla(\phi-\textbf{v}\cdot\textbf{A})+e\frac{d}{d t}\frac{\partial (\phi-\textbf{v}\cdot\textbf{A})}{\partial \textbf{v}}$$
+    
     此时有广义势：
     $$U=e(\phi-\textbf{v}\cdot\textbf{A})$$
     \subsection{守恒量}
@@ -471,8 +492,8 @@ After completing this chapter, you can claim to have studied theoretical mechani
     $$L=\alpha c \sqrt{1-\beta^2}$$
     动量的推导值$\frac{\partial L}{\partial \textbf{v}}=-\alpha \textbf{v}\gamma/c$，测量值为$\gamma m \textbf{v}$,故相对论下拉氏量为：
     $$L=L=-m c^2 \sqrt{1-\beta^2}$$
-    \section{有心运动}
-    \subsection{两体问题}
+    \chapter{有心运动}
+    \section{两体问题}
     $$\textbf{r}_c,\textbf{r}_{12}$$
     可以用来表述两体问题中的六个自由度。此时动能有：
     $$T=\frac{1}{2}(m_1+m_2)\dot{\textbf{r}}^2_c+\frac{1}{2}\mu \dot{\textbf{r}}^2_{12}$$
