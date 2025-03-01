@@ -438,15 +438,27 @@ U=U_1+U_2+U_{bt}
   F(T,V,N)=U-TS\\
   \mathrm{d}F=-S\mathrm{d}T-p\mathrm{d}V+\mu\mathrm{d}N\\
   H(S,p,N)=U+PV\\
-  \mathrm{d}F=T\mathrm{d}S+V\mathrm{d}p+\mu\mathrm{d}N\\
+  \mathrm{d}H=T\mathrm{d}S+V\mathrm{d}p+\mu\mathrm{d}N\\
   G(T,p,N)=U-TS+PV\\
-  \mathrm{d}F=-S\mathrm{d}T+V\mathrm{d}p+\mu\mathrm{d}N
+  \mathrm{d}G=-S\mathrm{d}T+V\mathrm{d}p+\mu\mathrm{d}N
 \end{align}
 
 某些情况下，我们可以用这些热力学函数来表征不可逆过程的方向。例如，$T,p$固定的情况下，我们有：
 
+\begin{equation}
+  \mathrm{d}G=\text{\dj}Q-T\mathrm{d}S\leq0
+\end{equation}
 
+又例如，$T,V$固定的情况下，我们有：
+\begin{equation}
+  \mathrm{d}F=\text{\dj}Q-T\mathrm{d}S\leq0\end{equation}
 
+同时，很显然$G$满足方程：
+\begin{equation}
+  G(T,p,\lambda N)=\lambda G
+\end{equation}
+
+两侧分别对$\lambda$求导并取$\lambda=1$，我们可以得到$G=\mu N$，这也符合前面我们得到的$U$的公式。
 \subsection{响应函数}
 响应函数一般都是一些方便实验观测的量，其存在意义是为了验证热力学理论的正确性。常用的响应函数有以下几个：
 \begin{align}
@@ -462,6 +474,59 @@ p\beta \kappa_T=\alpha
 \end{equation}
 
 \section{麦克斯韦关系}
+麦克斯韦关系就是上面四个热力学函数交换求偏导顺序得到的结果，因此一般有四个常见的麦克斯韦关系：
+
+\begin{align}
+\left(\frac{\partial S}{\partial V}\right)_T=\left(\frac{\partial p}{\partial T}\right)_v\\
+\left(\frac{\partial T}{\partial p}\right)_S=\left(\frac{\partial V}{\partial S}\right)_p\\
+\left(\frac{\partial T}{\partial V}\right)_S+\left(\frac{\partial p}{\partial S}\right)_v=0\\
+\left(\frac{\partial S}{\partial p}\right)_T+\left(\frac{\partial V}{\partial T}\right)_p=0
+\end{align}
+
 
 \subsection{应用响应函数和麦克斯韦关系的一个例子}
+
+\begin{align}
+  C_p-C_v&=T\left(\left(\frac{\partial S}{\partial T}\right)_p-\left(\frac{\partial S}{\partial T}\right)_v\right)\\
+  &=T\left(\left(\frac{\partial S}{\partial T}\right)_v+\left(\frac{\partial S}{\partial V}\right)_T\left(\frac{\partial V}{\partial T}\right)_p-\left(\frac{\partial S}{\partial T}\right)_v\right)\\
+&=T\left(\frac{\partial S}{\partial V}\right)_T\left(\frac{\partial V}{\partial T}\right)_p\\
+&=T\left(\frac{\partial p}{\partial T}\right)_v\left(\frac{\partial V}{\partial T}\right)_p\\
+&=TpV\beta\alpha
+\end{align}
+
+\section{热平衡的再讨论}
+一个孤立系统在平衡时熵要取极大值。因此，如果我们把一个孤立系统分为两部分，则应该有：
+\begin{equation}
+  S(U,V,N)=S_1+S_2
+\end{equation}
+
+系统处于平衡状态时，应该有：
+\begin{equation}
+  0=\delta S=\delta S_1+\delta S_2=\frac{\partial S_1}{\partial U_1}\delta U_1+\frac{\partial S_1}{\partial V_1}\delta V_1+\frac{\partial S_1}{\partial N_1}\delta N_1+\frac{\partial S_2}{\partial U_2}\delta U_2+\frac{\partial S_2}{\partial V_2}\delta V_2+\frac{\partial S_2}{\partial N_2}\delta N_2
+\end{equation}
+
+对于孤立系统，我们又有：
+\begin{align}
+  \delta U_1+\delta U_2=0\\
+  \delta S_1+\delta S_2=0\\
+  \delta N_1+\delta N_2=0
+\end{align}
+
+代入原式，我们就得到：
+
+\begin{equation}
+  0=\delta S=\left(\frac{\partial S_1}{\partial U_1}-\frac{\partial S_2}{\partial U_2}\right)\delta U_1+\left(\frac{\partial S_1}{\partial V_1}-\frac{\partial S_2}{\partial N_2}\right)\delta V_1+\left(\frac{\partial S_1}{\partial N_1}-\frac{\partial S_2}{\partial N_2}\right)\delta N_1
+\end{equation}
+
+通过内能的微分表达式，我们又可以得到：
+\begin{equation}
+  \mathrm{d}S=\frac{\mathrm{d}U}{T}+\frac{p\mathrm{d}V}{T}-\frac{\mu \mathrm{d}N}{T}
+\end{equation}
+
+于是我们就得到，处于平衡条件时，体系处处的$T,p,\mu$都保持一致。
+
+\newpage
+\appendix
+\chapter{勒让德变换/Legendre transformation}
+
 \end{document}
