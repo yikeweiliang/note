@@ -433,7 +433,7 @@ U=U_1+U_2+U_{bt}
 
 从物理的角度，这实际上也是合理的。因为我完全可以在保证强度量不变的前提下，多加一些气体，这时候内能显然会跟着改变。也就是说，要得到一个作为广延量的内能的值，我们至少要知道一个广延量作为“数量”的量度。
 \section{ 其它热力学函数}
-与内能类似地，我们还可以定义以下几种热力学函数：
+与内能类似地，我们还可以定义以下几种热力学函数\footnote{有关这里，可以用附录$A$辅助理解。}：
 \begin{align}
   F(T,V,N)=U-TS\\
   \mathrm{d}F=-S\mathrm{d}T-p\mathrm{d}V+\mu\mathrm{d}N\\
@@ -524,6 +524,39 @@ p\beta \kappa_T=\alpha
 \end{equation}
 
 于是我们就得到，处于平衡条件时，体系处处的$T,p,\mu$都保持一致。
+
+此时，我们已经完成了$S$为极值情况下的计算。但是，如前所述，$S$在此时将会取到极大值，因此我们还需要使用极“大”值条件，也就是稳定条件，这是一个二阶条件：
+\begin{align}
+\delta^2 S&=\sum_{i=1}^2\left(\delta\left(\frac{\partial S_i}{\partial U_i}\right)\delta U_i+\delta\left(\frac{\partial S_i}{\partial V_i}\right)\delta V_i+\delta\left(\frac{\partial S_i}{\partial N_i}\right)\delta N_1\right)\\
+&=\sum_{i=1}^2\left(\delta\left(\frac{1}{T_i}\right)\delta U_i+\delta\left(\frac{p_i}{T_i}\right)\delta V_i+\delta\left(\frac{-\mu_i}{T_i}\right)\delta N_i\right)\leq0
+\end{align}
+
+这里，考虑$1,2$两个子系统有着相反的变化，它们对系统总的二阶微分差值一定是同向的，也就是说，上面这个式子可以写成更普遍的：
+
+\begin{align}
+ & \delta\left(\frac{1}{T}\right)\delta U+\delta\left(\frac{p}{T}\right)\delta V+\delta\left(\frac{-\mu}{T}\right)\delta N\\
+  &=-\frac{\delta T}{T^2}\delta U+\frac{T\delta p-p\delta T}{T^2}\delta V-\frac{T\delta\mu-\mu\delta T}{T^2}\delta N\\
+  &=-\frac{\delta U+p\delta V-\mu\delta N}{T^2}\delta T+\frac{\delta p\delta V}{T}-\frac{\delta\mu\delta N}{T}\\
+  &=\frac{-\delta S\delta T+\delta p\delta V-\delta\mu\delta N}{T}\leq0
+\end{align}
+
+最终我们就得到二阶条件：\footnote{请注意这里面只有三个独立变量。而且，与前面不同，在这个方程里你可以任选三个作为独立变量组。}
+\begin{equation}
+  -\delta S\delta T+\delta p\delta V-\delta\mu\delta N\leq0
+\end{equation}
+
+\section{气-液相变}
+对于相变来说，相图是十分重要的概念。相图给出了在给定参数的情况下体系的相态。相图常用$p,T$作为参数。（插图）
+
+
+
+
+
+
+
+
+
+
 
 \newpage
 \appendix

@@ -472,14 +472,21 @@ T=\frac{1}{2}\dot{\textbf{q}}^T\textbf{m}\dot{\textbf{q}}
     于是我们就讨论了最简单的运动积分。当然，如果运动满足一些其他的形式，可能还会有新的运动积分。运动积分可以代替某些方程来辅助运动的求解，一般来说，作为积分，运动积分是一阶微分方程，相比拉格朗日方程作为二阶微分方程而言更容易求解。
    
  \section{非完整约束下的拉氏方程}
-    $$f_k=A_{kj}\dot{q}_j+B_k=0,B=B(q_j,t)$$
-    被称为线性非完整约束，遇到线性非完整约束时我们可以使用拉格朗日乘子法进行求解。先由线性非完整约束得到：
-    $$\sum_{j=1}^s A_{kj}\delta q_j=0,k=1,\dots,t$$
+
+  在一般情况下，一个体系还会包含非完整约束。前面我们一直避免谈论非完整约束，是因为非完整约束体系下无法立得广义坐标变分之间的独立性，因此就无法得到分离的$m$个拉格朗日方程。现在，我们着力于克服这个困难。但是，我们仍然要承认这个问题的难度，所以本笔记止于求解线性非完整约束体系。
+
+    \begin{equation}f_k=\sum_{j=1}^s\alpha_{kj}\dot{q}_j+\beta_k=0\end{equation}
+
+    被称为线性非完整约束。其中$\alpha_{kj},\beta_k$都是$q,t$的函数。遇到线性非完整约束时我们可以使用拉格朗日乘子法进行求解。具体过程是，先由线性非完整约束得到：
+    \begin{equation}\sum_{j=1}^s \alpha_{kj}\delta q_j=0,k=1,\dots,t\end{equation}
+
     $t$个线性非完整约束可以组成一张矩阵$\textbf{A}_{t\times s}$,我们有：
-    $$\textbf{A}_{t\times s}(\delta\textbf{ q})=\textbf{0}$$
-    拉格朗日乘子法：
-    $$\frac{d}{dt}\frac{\partial T}{\partial \dot{q}_j}-\frac{\partial T}{\partial q^j}-Q_j-\sum_{k=1}^t(\lambda_kA_{kj})=0$$
-    总是可以选择合适的一组$\lambda_k$使得$k$个自由度上的拉氏方程等于0，于是还剩$s-k$个自由度上的拉氏方程，这些$\delta q_j$都相互独立，因此可以得到$s-k$个拉氏方程，需要注意的是，此时$\lambda_kA_{kj}$为第$k$个约束方程指代的约束力在$q_j$方向的分量。同时，当我们要求完整约束下的某个约束力的时候，也可以采用上述的逻辑，先把完整约束写成线性非完整约束的形式，然后通过拉格朗日乘子法求得之。
+    $$\textbf{A}_{t\times s}(\delta\textbf{q})=\textbf{0}$$
+
+    按照对应的自由度进行求和，并丢到对应自由度的方程里去（请注意这时其实是$s+1$个方程求和再分离坐标得到$s$个方程），得到：
+    \begin{equation}\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial T}{\partial \dot{q}_j}-\frac{\partial T}{\partial q_j}-Q_j-\sum_{k=1}^t(\lambda_k\alpha_{kj})=0\end{equation}
+
+    总是可以选择合适的一组$\lambda_k$使得$t$个自由度上的拉氏方程等于0，于是还剩$s-t$个自由度上的拉氏方程，这些$\delta q_j$都相互独立，因此可以得到$s-t$个拉氏方程，需要注意的是，此时$\lambda_kA_{kj}$为第$k$个约束方程指代的约束力在$q_j$方向的分量。同时，当我们要求完整约束下的某个约束力的时候，也可以采用上述的逻辑，先把完整约束写成线性非完整约束的形式，然后通过拉格朗日乘子法求得之。
      \subsection{耗散}
     $$\textbf{F}=-k\textbf{v}$$
     考虑上述形式的力，要将该耗散力写成主动力的形式，有：
