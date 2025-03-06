@@ -487,95 +487,86 @@ T=\frac{1}{2}\dot{\textbf{q}}^T\textbf{m}\dot{\textbf{q}}
     \begin{equation}\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial T}{\partial \dot{q}_j}-\frac{\partial T}{\partial q_j}-Q_j-\sum_{k=1}^t(\lambda_k\alpha_{kj})=0\end{equation}
 
     总是可以选择合适的一组$\lambda_k$使得$t$个自由度上的拉氏方程等于0，于是还剩$s-t$个自由度上的拉氏方程，这些$\delta q_j$都相互独立，因此可以得到$s-t$个拉氏方程，需要注意的是，此时$\lambda_kA_{kj}$为第$k$个约束方程指代的约束力在$q_j$方向的分量。同时，当我们要求完整约束下的某个约束力的时候，也可以采用上述的逻辑，先把完整约束写成线性非完整约束的形式，然后通过拉格朗日乘子法求得之。
-     \subsection{耗散}
-    $$\textbf{F}=-k\textbf{v}$$
-    考虑上述形式的力，要将该耗散力写成主动力的形式，有：
-     $$Q_j=\textbf{F}\cdot\frac{\partial \textbf{r}}{\partial q_j}=\textbf{F}\cdot\frac{\partial \dot{\textbf{r}}}{\partial \dot{q}_j}=-k\frac{\partial \dot{\textbf{r}}^2}{\partial \dot{q}_j}$$
-    定义耗散函数$\mathcal{F}=\frac{1}{2}k\dot{\textbf{r}}^2$  可以得到：
-    $$\frac{d}{dt}\frac{\partial T}{\partial \dot{q}_j}-\frac{\partial T}{\partial q_j}=-\frac{\partial V}{\partial \dot{q}_j}-\frac{\partial \mathcal{F}}{\partial \dot{q}_j}$$
-    可以推出：
-    $$\frac{d}{dt}(T+V)=-k\textbf{v}^2$$
-    \subsection{拉格朗日方程推导牛顿运动定律}
-    $$L=L(\textbf{r},\dot{\textbf{r}},t)$$
-    考虑自由质点的拉氏量，它应该具有时间对称性，空间对称性和各向同性，故应有：
-    $$L=L(\dot{\textbf{r}}^2)$$
-    代入拉氏方程有：
-    $$\frac{d}{dt}(2\dot{\textbf{r}}\frac{\partial L}{\partial \dot{\textbf{r}}^2})=0$$
-    因此自由质点作匀速直线运动，这就是惯性定律。然后我们写出换系之后的拉氏量：
-    $$L^\prime=L(\textbf{v}^2)+\frac{\partial L}{\partial \textbf{v}^2}(2\textbf{V}\cdot\textbf{v}+\textbf{V}^2)$$
-    已知拉氏量之间只能相差：
-    $$\frac{du}{dt}=\frac{\partial u}{\partial t}+\frac{\partial u}{\partial \textbf{r}}\cdot\textbf{v}$$
-    因此$L=\alpha\textbf{v}^2$，在经典力学下，通过实验得到的能量值可以得到$L=\frac{1}{2}m\textbf{v}^2$；相对论情形下，有：
-    $$S=\int Ldt$$
-    为了保证不同参考系的一致性，应有
-    $$S=\beta\int ds=\alpha\int c(\sqrt{1-\beta^2})dt$$
-    故有：
-    $$L=\alpha c \sqrt{1-\beta^2}$$
-    动量的推导值$\frac{\partial L}{\partial \textbf{v}}=-\alpha \textbf{v}\gamma/c$，测量值为$\gamma m \textbf{v}$,故相对论下拉氏量为：
-    $$L=L=-m c^2 \sqrt{1-\beta^2}$$
-    \chapter{有心运动}
+  
+    \chapter{有心运动/Central Force}
     \section{两体问题}
-    $$\textbf{r}_c,\textbf{r}_{12}$$
-    可以用来表述两体问题中的六个自由度。此时动能有：
-    $$T=\frac{1}{2}(m_1+m_2)\dot{\textbf{r}}^2_c+\frac{1}{2}\mu \dot{\textbf{r}}^2_{12}$$
+    两体问题中，我们总是选择用$\textbf{r}_c,\textbf{r}_{12}$来表述问题中的六个自由度。显然，两体问题中不存在约束，是理想完整稳定约束体系的特例。此时动能有：
+    \begin{equation}T=\frac{1}{2}(m_1+m_2)\dot{\textbf{r}}^2_c+\frac{1}{2}\mu \dot{\textbf{r}}^2_{12}\end{equation}
+   
     两体运动中，我们假定：
-    $$U=U(t,\textbf{r}_{12},\dot{\textbf{r}}_{12})$$
+    \begin{equation}U=U(t,\textbf{r}_{12},\dot{\textbf{r}}_{12})\end{equation}
+    
     故有拉氏量$L=T-U$,可以将这个拉氏量拆成仅与质心相关和仅与相对位置相关的两个新的拉氏量 $L^\prime$和$L^{\prime\prime}$，有：
-    $$L^\prime=\frac{1}{2}(m_1+m_2)\dot{\textbf{r}}^2_c,L^{\prime\prime}=\frac{1}{2}\mu \dot{\textbf{r}}^2_{12}-U(t,\textbf{r}_{12},\dot{\textbf{r}}_{12})$$
-    后续我们关于$L^{\prime\prime}$进行讨论。事实上，我们可以把该拉氏量看成一个新的粒子的运动，若要求解原运动，我们只需先求解新运动，再利用位移的变换公式就可以推回原运动。大多数情况下，两体运动中有：
+  \begin{align}L^\prime&=\frac{1}{2}(m_1+m_2)\dot{\textbf{r}}^2_c\\L^{\prime\prime}&=\frac{1}{2}\mu \dot{\textbf{r}}^2_{12}-U(t,\textbf{r}_{12},\dot{\textbf{r}}_{12})\end{align}
+   
+  后续我们关于$L^{\prime\prime}$进行讨论。事实上，我们可以把该拉氏量看成一个新的粒子的运动，若要求解原运动，我们只需先求解新运动，再利用位移的变换公式就可以推回原运动。
+  
+我们接下来讨论一般性的，有心力场下质点的运动。很显然，有心力场下，质点的运动天然地被约束在一个平面内，也就是初始的$\textbf{r},\textbf{v}$组成的平面。这是因为，在任意一个时刻，有心力$\textbf{F}$都在该时刻的$\textbf{r},\textbf{v}$组成的平面里，因此质点的速度不会脱离这个平面，位移也就不会脱离这个平面。
+  
+  
+  
+  大多数情况下，两体运动中有：
     $$U=U(r)$$
-    这样的势能和这样的势能对应的力被称为有心势和有心力。若选用球坐标，则可推得：
-    $$P_\phi=C,T+U=E,P_\theta=\mu {r}^2\dot{\theta},\frac{dP_\theta}{dt}=\frac{\partial L}{\partial {\theta}}=\mu {r}^2\dot{\phi}sin\theta cos\theta$$
-    若我们选择合适的坐标轴，使得初始时$\theta=\pi/2$且$\dot{\theta}=0$，则有$\theta=\pi/2$恒成立。此时广义坐标的数目减为2。
-    $$\mu\ddot{r}=\mu r\dot{\phi}^2-\frac{\partial U}{\partial r}$$
-    $$\frac{d}{dt}(\mu r^2\dot{\phi})=0$$
+    
+    这样的势能和这样的势能对应的力被称为有心势和有心力。由于质点的运动被限制在平面里，因此我们可以选择用极坐标系来标定位置，则可推得：
+\begin{equation}
+  L=\frac{1}{2}\mu(\dot{{r}}^2+{r}\dot{\theta}^2)-U(r)\end{equation}
+    
+  代入拉格朗日方程，我们就可以得到：
+  \begin{align}\mu\ddot{r}&=\mu r\dot{\phi}^2-\frac{\partial U}{\partial r} \\
+    \frac{\mathrm{d}}{\mathrm{d}t}(\mu r^2\dot{\phi})&=0\end{align}
+
     此即我们得到的两个二阶微分方程，或者使用初积分我们可以得到两个一阶微分方程：
-    $$\mu r^2\dot{\phi}=J$$
-    $$\frac{1}{2}\mu (\dot{r}^2+r^2\dot{\phi}^2)+U=E$$
+    \begin{align}\mu r^2\dot{\phi}&=J\\
+    \frac{1}{2}\mu (\dot{r}^2+r^2\dot{\phi}^2)+U&=E\end{align}
+   
     引入有效势能：
-    $$E_{eff}=U+\frac{J}{2\mu r^2}$$
+    \begin{equation}E_{\text{eff}}=U+\frac{J}{2\mu r^2}\end{equation}
+    
     即有：
-    $$E=\frac{1}{2}\mu \dot{r}^2+E_{eff}$$
+    \begin{equation}E=\frac{1}{2}\mu \dot{r}^2+E_\text{eff}\end{equation}
+
     即可解出$r=r(t)$
-    \subsection{比奈公式}
+
+    我们可以通过有效势能$E_{\text{eff}}-r$的曲线和质点能量来判断轨道的束缚性。但请注意，这种方法无法判断轨道是否为闭合轨道。
+    
+    \section{比奈公式}
     为了求轨道方程$r=r(\phi)$,我们令$C=r^2\dot{\phi},u=1/r$,则有：
-    $$\frac{d}{dt}=\dot{\phi}\frac{d}{d\phi}=Cu^2\frac{d}{d\phi}$$
-    $$\dot{r}=\frac{dr}{du}\frac{du}{dt}=-\frac{1}{u^2}Cu^2\frac{du}{d\phi}=-C\frac{du}{d\phi}$$
-    即能量比奈公式：
-    $$\frac{1}{2}\mu C^2((\frac{du}{d\phi})^2+u^2)+U(1/u)=E$$
+    \begin{equation}\frac{\mathrm{d}}{\mathrm{d}t}=\dot{\phi}\frac{\mathrm{d}}{\mathrm{d}\phi}=Cu^2\frac{\mathrm{d}}{\mathrm{d}\phi}\end{equation}
+      \begin{equation}\dot{r}=\frac{\mathrm{d}r}{\mathrm{d}u}\frac{\mathrm{d}u}{\mathrm{d}t}=-\frac{1}{u^2}Cu^2\frac{\mathrm{d}u}{\mathrm{d}\phi}=-C\frac{\mathrm{d}u}{\mathrm{d}\phi}\end{equation}
+    
+      于是我们就可以得到能量形式的比奈公式：
+    \begin{equation}\frac{1}{2}\mu C^2((\frac{\mathrm{d}u}{\mathrm{d}\phi})^2+u^2)+U(1/u)=E\end{equation}
+    
     不加推导地给出力的比奈公式：
-    $$-\mu C^2u^2(\frac{d^2u}{d\phi^2}+u)\textbf{e}_r=\textbf{F}(1/u)$$
+    \begin{equation}-\mu C^2u^2(\frac{\mathrm{d}^2u}{\mathrm{d}\phi^2}+u)\textbf{e}_r=\textbf{F}(1/u)\end{equation}
+    
     由比奈公式可以得到
-    $$\Delta \phi=\int_{u_{min}}^{u_{max}}\frac{du}{\sqrt{(E-U)\frac{2}{\mu C^2}-u^2}}$$
+    \begin{equation}\Delta \phi=\int_{u_\text{min}}^{u_\text{max}}\frac{du}{\sqrt{(E-U)\frac{2}{\mu C^2}-u^2}}\end{equation}
+    
     如果刚好有$2\Delta \phi=2\pi$,则说明轨道闭合，这时候的势能显然拥有更好的对称性。
     \subsection{伯特兰定理}
-     $$\Delta \phi=\int_{u_{min}}^{u_{max}}\frac{du}{\sqrt{(E-U)\frac{2}{\mu C^2}-u^2}}$$
-    何时轨道闭合且稳定？稳定指径向的微小扰动永远只是径向的微小扰动，不会导致径向运动大的变化（简而言之即径向的微小扰动会产生径向的振动模）考虑函数：
-    $$\mathcal{J}=-\frac{\mu}{J^2u^2}F(\frac{1}{u})$$
-    考虑相对于圆轨道的微小偏离，即$u=u_0+\delta$，此时$\mathcal{J}=\mathcal{J}_0+\frac{\partial \mathcal{J}}{\partial u}\delta$,由比奈公式有：
-    $$\frac{d^2\delta}{d\phi^2}+(1-\frac{\partial \mathcal{J}}{\partial u}_{u=u_0})\delta=0$$
-    轨道闭合稳定，这要求$\beta^2=1-\frac{\partial \mathcal{J}}{\partial u}$其中$\beta$应为有理数，则：
-    $$\beta^2=1-(\frac{2\mu}{J^2u^3}F(\frac{1}{u})-\frac{\mu}{J^2u^2}\frac{d}{du}(F(\frac{1}{u})))_{u=u_0}$$
-    圆轨道时有：
-    $$u_0=-\frac{\mu F(\frac{1}{u})}{J^2u^2_0}$$
-    即：
-    $$\beta^2=3-\frac{u_0}{F(\frac{1}{u_0})}\frac{d}{du}F(\frac{1}{u})$$
-    显然$\beta$随$u$连续变化，又有$\beta$为有理数，故有$\beta$为常量，即：
-    $$\frac{dF(r)}{dr}=(3-\beta^2)\frac{F(r)}{r}$$
-    解得：
-    $$F=\alpha r^{3-\beta^2}$$
-    此时，稳定等价于：
-    $$\beta^2>0$$
-    若考虑$\mathcal{J}$的高阶展开，最终可以得到稳定条件：
-    $$\beta^2=1,\beta^2=4$$
-    分别对应万有引力和谐振子力。
-    \subsection{天体运动}
-    $$\phi=\int_{u_0}^{u}\frac{du}{\sqrt{(E-U)\frac{2}{\mu C^2}-u^2}}$$
-    这里我们考虑万有引力，也就是势能的表达式确定了，并且我们这里考虑中心天体质量足够大的情况，令中心天体的质量为$M_s$定义，当我们需要严格解的时候，只需要记住下述推导中的$m=\mu,M_s=M+m$：
-    $$C=r^2\dot{\phi}$$
-    $$B=\frac{GM_s}{C^2}$$
-    $$A=\sqrt{B^2+\frac{2E}{mC^2}}$$
-    $$\phi_0=arcsin(\frac{1-B}{AR})$$
+    \begin{equation}\Delta \phi=\int_{u_\text{min}}^{u_\text{max}}\frac{du}{\sqrt{(E-U)\frac{2}{\mu C^2}-u^2}}\end{equation}
+    
+    何时轨道闭合且稳定？稳定指径向的微小扰动永远只是径向的微小扰动，不会导致径向运动大的变化（简而言之即径向的微小扰动会产生径向的振动模）
+    
+    伯特兰定理给出，只有当$U(r)=\frac{A}{r}$或者$U(r)=Br^2$时，轨道是闭合的。否则轨道会出现进动现象。显然，这两种轨道拥有更高的对称性。更高的对称性带来新的运动积分。
+
+    对于$U(r)=\frac{A}{r}$一类的势场，其中运动的粒子存在运动积分，称为拉普拉斯-龙格-楞次矢量，形如：
+\begin{equation}
+\textbf{M}=\textbf{p}\times\textbf{L}+Am\frac{\textbf{r}}{r}
+\end{equation}
+
+    \section{天体运动}
+    很显然，由比奈公式，我们总是可以普遍地得到：
+    \begin{equation}\phi=\int_{u_0}^{u}\frac{du}{\sqrt{(E-U)\frac{2}{\mu C^2}-u^2}}\end{equation}
+
+    这里我们考虑万有引力，也就是势能的表达式确定了，并且我们这里考虑中心天体质量足够大的情况，令中心天体的质量为$M_s$定义，当我们需要严格解的时候，只需要记住下述推导中的$m=\mu,M_s=M+m$，同时，为了便于计算，我们不得不设一些变量进行替换，它们被陈列如下：
+    \begin{align}C&=r^2\dot{\phi}\\
+    B&=\frac{GM_s}{C^2}\\
+    A&=\sqrt{B^2+\frac{2E}{mC^2}}\\
+    \phi_0&=arcsin(\frac{1-B}{AR})\end{align}
+    
     $B$和$A$的量纲是$1/R$,可以得到天体运动的轨道：
     $$r=\frac{1}{B+Acos(\phi+\phi_0)}$$
     注意：这里$\phi_0$有两个取值(除非$\phi_0=\pm\pi/2$)，需要根据发射角来验证。同时，二次曲线的普遍形式$r=\frac{p}{1+ecos({\phi+\phi_0-\frac{\pi}{2}})}$天体运动时有$e=A/B$,$e>1,0<e<1,e=0$分别对应双曲线，椭圆和抛物线。[角动量不变时，圆轨道的能量最小；能量不变时，圆轨道的角动量最大（移动$E_{eff}$的曲线可以得出结论）]
