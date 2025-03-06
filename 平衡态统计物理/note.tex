@@ -584,10 +584,60 @@ p\beta \kappa_T=\alpha
 \section{气-液相变}
 对于相变来说，相图是十分重要的概念。相图给出了在给定参数的情况下体系的相态。相图常用$p,T$作为参数。（插图）
 
+\begin{figure}[h]
+  \centering 
+  \includegraphics[height=5.0cm]{6.png}
+  \caption{come from ZCYang}
+\end{figure}
+
+需要指出的是，相图上的边界曲线都代表了一级相变，而在气液相变曲线的右侧（这条线终结于临界点），会存在一个区域，对应二级相变。一级相变是间断的，很容易就能区分不同的相态；但二级相变是连续相变，不会存在从一个相到另一个完全不同的相的跃迁。或者，我们可以从$p-V$图上的等温线来理解。
+
+\begin{figure}[ht]
+  \centering 
+  \includegraphics[height=5.0cm]{7.png}
+  \caption{come from ZCYang}
+\end{figure}
+
+当$T>T_c$时，为二级相变，气体可以近似认为是理想气体，因此其等温线类似理想气体的等温线；当$T<T_c$时，气体开始需要经过两相共存线，因此会存在一段平直的曲线，这段平直曲线就是一级相变的部分。
+
+也因此，临界点就是那个刚好平直段消失的温度。
+
+显然，我们前面得到了一个等式：
+\begin{equation}
+  \mu=\frac{V}{N}\mathrm{d}P-\frac{S}{N}\mathrm{d}T\end{equation}
+
+因此，$V$可以被认为是一阶偏导数$\left(\frac{\partial \mu_n}{\partial p}\right)_T$，因此，$V$的相变被称为一级相变。
+
+所有的相变都可以理解为热力学函数在某些区域的非解析行为。
 
 
+\subsection{两相共存线}
+当物质以气体或液体存在时，它们的化学势不同，应当存在两个函数：
+\begin{align}
+  \mu_g=\mu_g(p,T)\\
+  \mu_l=\mu_l(p,T)
+\end{align}
 
+在两相共存线上，应当有：
+\begin{equation}
+  \mu_g=\mu_l
+\end{equation}
 
+这个条件可以给出共存线的方程。如果我们写出这条线的微分形式，也就是：
+\begin{align}
+  \mathrm{d}\mu_g=-s_g\mathrm{d}T+v_g\mathrm{d}p&=-s_l\mathrm{d}T+v_l\mathrm{d}p=\mathrm{d}\mu_l     \\
+  \frac{\mathrm{d}p}{\mathrm{d}T}&=\frac{s_g-s_l}{v_g-v_l}
+\end{align}
+
+我们定义相变潜热就是一团物体在不改变温度的情况下单纯地进行相态转变时吸收的热量，即：
+\begin{equation}
+  L=T(S_2-S_1)
+\end{equation}
+
+于是我们就得到克拉珀隆方程：
+\begin{equation}
+  \frac{\mathrm{d}p}{\mathrm{d}T}=\frac{L}{T\Delta V}
+\end{equation}
 
 
 

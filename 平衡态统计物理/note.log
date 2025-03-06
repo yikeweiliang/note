@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.10.11)  5 MAR 2025 22:47
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.10.11)  7 MAR 2025 06:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -703,9 +703,14 @@ File: 5.png Graphic file (type bmp)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[8] [9] [10] [11] [12] [13] [14] [15]
+[8] [9] [10] [11] [12] [13] [14]
+File: 6.png Graphic file (type bmp)
+<6.png>
+File: 7.png Graphic file (type bmp)
+<7.png>
+ [15] [16]
 附录 A.
-[16
+[17
 
 ] (./note.aux)
  ***********
@@ -717,15 +722,15 @@ L3 programming layer <2022/07/14>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `note.out' has not changed.
-(rerunfilecheck)             Checksum: 3070B265B65BAA2BB8132662800A3A9C;2503.
+(rerunfilecheck)             Checksum: 0D2B430BCF0B3F157E86C00265A854DA;2605.
  ) 
 Here is how much of TeX's memory you used:
- 16328 strings out of 476729
- 357287 string characters out of 5801282
+ 16347 strings out of 476729
+ 357486 string characters out of 5801282
  1946842 words of memory out of 5000000
- 38079 multiletter control sequences out of 15000+600000
+ 38096 multiletter control sequences out of 15000+600000
  567301 words of font info for 101 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  74i,11n,88p,305b,409s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on note.pdf (16 pages).
+Output written on note.pdf (17 pages).
