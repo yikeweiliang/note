@@ -639,7 +639,36 @@ p\beta \kappa_T=\alpha
   \frac{\mathrm{d}p}{\mathrm{d}T}=\frac{L}{T\Delta V}
 \end{equation}
 
+显然，气体体积是远大于液体体积的，因此我们可以把上式近似为：
 
+\begin{equation}
+  \frac{\mathrm{d}p}{\mathrm{d}T}=\frac{L}{T V_g}
+\end{equation}
+
+如果气体刚好是理想气体，我们就可以代入理想气体的状态方程：
+\begin{equation}
+  \frac{\mathrm{d}p}{\mathrm{d}T}=\frac{pL}{T^2 nR}
+\end{equation}
+
+积分就得到：
+\begin{equation}
+p=C\mathrm{exp}({-\frac{L}{nRT}})
+\end{equation}
+
+讨论$p-V$图上的等温线时，我们发现理想气体无法满足我们对一级相变现象的研究要求，于是我们转而考虑范德瓦尔斯气体。范德瓦尔斯气体的等温线在$p-V$图上显示如下：
+插图
+
+显然，这张图中存在一段斜率为正的部分，这部分的$\kappa_T$是小于零的，因此在这部分是不能够平衡的。为了弥补这段斜率为正的错误，我们需要对此进行修改。
+
+其次，这张图中显然存在一段$p$的取值，对应多个$V$的取值，这时，究竟哪些$V$是可以取到的？在$p,T$固定的条件下，很显然我们有：
+\begin{equation}
+\mathrm{d}G\leq0
+\end{equation}
+
+因此，稳定情况下，$G=\mu N$会取到极小值。不考虑粒子数的变化，我们就得到：
+\begin{equation}
+\mathrm{d}G=N\mathrm{d}\mu=N(-S\mathrm{d}T+V\mathrm{d}p)=NV\mathrm{d}p
+\end{equation}
 
 
 
