@@ -559,21 +559,33 @@ T=\frac{1}{2}\dot{\textbf{q}}^T\textbf{m}\dot{\textbf{q}}
 
     \section{天体运动}
     很显然，由比奈公式，我们总是可以普遍地得到：
-    \begin{equation}\phi=\int_{u_0}^{u}\frac{du}{\sqrt{(E-U)\frac{2}{\mu C^2}-u^2}}\end{equation}
+    \begin{equation}\pm\phi=\int_{u_0}^{u}\frac{du}{\sqrt{(E-U)\frac{2}{\mu C^2}-u^2}}\end{equation}
 
     这里我们考虑万有引力，也就是势能的表达式确定了，并且我们这里考虑中心天体质量足够大的情况，令中心天体的质量为$M_s$定义，当我们需要严格解的时候，只需要记住下述推导中的$m=\mu,M_s=M+m$，同时，为了便于计算，我们不得不设一些变量进行替换，它们被陈列如下：
     \begin{align}C&=r^2\dot{\phi}\\
     B&=\frac{GM_s}{C^2}\\
     A&=\sqrt{B^2+\frac{2E}{mC^2}}\\
-    \phi_0&=arcsin(\frac{1-B}{AR})\end{align}
+    \phi_0&=\mathrm{arccos}(\frac{1}{AR}-\frac{B}{A})\\
+  e&=\frac{A}{B}\\
+  p&=\frac{1}{B}
+  \end{align}
     
     $B$和$A$的量纲是$1/R$,可以得到天体运动的轨道：
-    $$r=\frac{1}{B+Acos(\phi+\phi_0)}$$
+    \begin{align}r&=\frac{1}{B+A\mathrm{cos}(\phi+\phi_0)}\\
+      r&=\frac{1}{B+A\mathrm{cos}(\phi-\phi_0)}\end{align}
+
     注意：这里$\phi_0$有两个取值(除非$\phi_0=\pm\pi/2$)，需要根据发射角来验证。同时，二次曲线的普遍形式$r=\frac{p}{1+ecos({\phi+\phi_0-\frac{\pi}{2}})}$天体运动时有$e=A/B$,$e>1,0<e<1,e=0$分别对应双曲线，椭圆和抛物线。[角动量不变时，圆轨道的能量最小；能量不变时，圆轨道的角动量最大（移动$E_{eff}$的曲线可以得出结论）]
     \subsection{第一、二、三宇宙速度}
     $$v_1=\sqrt{\frac{GM_s}{R}}$$
     $$v_2=\sqrt{2}v_1$$
     $$v_3=\sqrt{(3-2\sqrt{2})\frac{GM_{sun}}{R_{ES}}+\frac{2GM_s}{R}}$$
+    
+    \begin{itemize}
+    \item 霍曼转移：在同一平面内卫星进行切向加速，实现轨道之间的切换。
+    \end{itemize}
+    
+    
+    
     \subsection{限制型三体运动}
     $$L=\frac{1}{2}m\dot{\textbf{r}}^2+m\dot{\textbf{r}}\cdot(\Omega \times{\textbf{r}})-V_{eff}$$
     采用转动参考系可以写出如上的拉氏量，其中：
