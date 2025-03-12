@@ -19,4 +19,8 @@
 \contentsline {section}{\numberline {2.6}热平衡的再讨论}{13}{section.2.6}%
 \contentsline {section}{\numberline {2.7}气-液相变}{15}{section.2.7}%
 \contentsline {subsection}{\numberline {2.7.1}两相共存线}{16}{subsection.2.7.1}%
-\contentsline {chapter}{\numberline {A}勒让德变换/Legendre transformation}{18}{appendix.A}%
+\contentsline {subsection}{\numberline {2.7.2}临界点与临界指数}{17}{subsection.2.7.2}%
+\contentsline {subsection}{\numberline {2.7.3}第二和三种临界指数}{18}{subsection.2.7.3}%
+\contentsline {subsection}{\numberline {2.7.4}普适类}{18}{subsection.2.7.4}%
+\contentsline {section}{\numberline {2.8}第三定律}{18}{section.2.8}%
+\contentsline {chapter}{\numberline {A}勒让德变换/Legendre transformation}{19}{appendix.A}%

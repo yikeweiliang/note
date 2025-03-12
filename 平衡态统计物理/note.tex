@@ -654,6 +654,7 @@ p\beta \kappa_T=\alpha
 \begin{equation}
 p=C\mathrm{exp}({-\frac{L}{nRT}})
 \end{equation}
+\subsection{临界点与临界指数}
 
 讨论$p-V$图上的等温线时，我们发现理想气体无法满足我们对一级相变现象的研究要求，于是我们转而考虑范德瓦尔斯气体。范德瓦尔斯气体的等温线在$p-V$图上显示如下：
 插图
@@ -701,28 +702,68 @@ T_c&=\frac{8a}{27bk_B}
 
 \item 临界指数：所有气体在临界点附近都有统一的性质，即此时有：
 \begin{equation}
-V_g-V_l=A(T_c-T)^\beta
+V_g-V_l=A(T_c-T)^\beta+C
 \end{equation}
 \end{itemize}
 
+以范德瓦尔斯气体为例，当体积距离平衡点有小的偏离时，我们不妨令：
+\begin{align}
+\tilde{v}_l=1-\frac{\epsilon}{2}\\
+\tilde{v}_g=1+\frac{\epsilon}{2}
+\end{align}
 
+两个体积对应的压强是相等的，这会给一个方程，由这个方程我们可以得到：
+\begin{equation}
+\tilde{T}=1-\frac{\epsilon^2}{16}
+\end{equation}
 
+因此此时临界指数等于$0.5$。
 
+\subsection{第二和三种临界指数}
+这种临界指数是针对$p-V$关系来讲的。定义这种临界指数为：
+\begin{equation}
+v-v_c=A(p-p_c)^\frac{1}{\delta}
+\end{equation}
 
+与前面类似的，范德瓦尔斯给出的临界指数为：$\delta=3$
 
+$\kappa_T$在平衡点附近的表现（体积保持$v_c$，温度不断逼近），此时有新的临界指数：
+\begin{equation}
+\kappa_T=A(T-T_c)^{-\gamma}
+\end{equation}
 
+范德瓦尔斯方程给出有$\gamma=1$
 
+$*$ 顺磁体的案例：说明临界指数是普适的，甚至无关体系是什么具体案例。（当然只有在临界点附近的时候才有这种性质）
 
+\subsection{普适类}
+气液相变和单轴磁体的磁化归属于同一个普适类。
 
+该普适类的特点是序参量（体积或磁场）是标量。归结普适类的点是序参量和体系的空间维度。
 
+\section{第三定律}
 
+热力学第三定律：最开始考虑的是，等温的条件下沿着某个路径（等温线）熵的变化。最后得到：
+\begin{align}
+\lim_{T\to 0} \Delta S(T)&=0\\
+\lim_{T\to 0}  S(x,T)&=0
+\end{align}
 
+该定律带来几个结果：
+\begin{align}
+\Delta S(x)=S(x,T)-S(x,0)&=\int_0^T\frac{\text{\dj}Q}{T}\\
+&=\int_0^T\frac{C_x(T)\mathrm{d}T}{T}
+\end{align}
 
+熵的收敛要求$\lim_{T\to 0}C_x(T)=0$，显然理想气体已经不满足这个条件。
 
+\begin{align}
+\alpha&=\frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_p\\
+&=-\frac{1}{V}\left(\frac{\partial S}{\partial p}\right)_T\\
+&\to 0(T \to 0)
+\end{align}
 
-
-
-
+第三个结论是，不可能通过有限的操作把温度降低到绝对零度。
 
 
 
