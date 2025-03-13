@@ -578,24 +578,44 @@ T=\frac{1}{2}\dot{\textbf{q}}^T\textbf{m}\dot{\textbf{q}}
     \subsection{第一、二、三宇宙速度}
     $$v_1=\sqrt{\frac{GM_s}{R}}$$
     $$v_2=\sqrt{2}v_1$$
-    $$v_3=\sqrt{(3-2\sqrt{2})\frac{GM_{sun}}{R_{ES}}+\frac{2GM_s}{R}}$$
+    $$v_3=\sqrt{(3-2\sqrt{2})\frac{GM_\mathrm{sun}}{R_\mathrm{ES}}+\frac{2GM_s}{R}}$$
     
     \begin{itemize}
     \item 霍曼转移：在同一平面内卫星进行切向加速，实现轨道之间的切换。
     \end{itemize}
     
     
+    \section{潮汐}
+
+    考虑$m_1,m_2$两体，相距为$R$，定义$\textbf{r}_0=\textbf{r}_{1\to2}$与$\textbf{r}$，在转动参考系下，我们可以写出$\textbf{r}$处的势能函数：
+    \begin{align}
+    U(\textbf{r})&=-\frac{Gm_1}{|\textbf{r}|}-\frac{Gm_2}{|\textbf{r}-\textbf{r}_0|}-\frac{1}{2}\left(\textbf{r}-\frac{m_2\textbf{r}_0}{m_1+m_2}\right)^2\left(\frac{G(m_1+m_2)}{|\textbf{r}_0|^3}\right)\\
+&=-\frac{Gm_1}{|\textbf{r}|}-\frac{Gm_2}{|\textbf{r}_0|}\left(1+\frac{\textbf{r}\cdot\textbf{r}_0}{\textbf{r}_0^2}-\frac{\textbf{r}^2}{2\textbf{r}_0^2}+\frac{3}{2}\left(\frac{\textbf{r}_0\cdot\textbf{r}}{\textbf{r}_0^2}\right)^2\right)-\frac{1}{2}\textbf{r}^2\frac{G(m_1+m_2)}{|\textbf{r}_0|^3}-\frac{1}{2}\frac{Gm_2^2}{(m_1+m_2)|\textbf{r}_0|}+\dots\\
+&=-\frac{Gm_1}{|\textbf{r}|}-\frac{Gm_2}{|\textbf{r}_0|}\left(1-\frac{\textbf{r}^2}{2\textbf{r}_0^2}+\frac{3}{2}\left(\frac{\textbf{r}_0\cdot\textbf{r}}{\textbf{r}_0^2}\right)^2\right)-\frac{1}{2}\textbf{r}^2\frac{G(m_1+m_2)}{|\textbf{r}_0|^3}-\frac{1}{2}\frac{Gm_2^2}{(m_1+m_2)|\textbf{r}_0|}
+    \end{align}
+
+
+    \section{圆轨道的稳定性}
+
+    一个简单的方式是：
+    \begin{equation}
+    \left(\frac{\partial^2 V_\mathrm{eff}}{\partial r^2}\right)_{r=a}>0
+    \end{equation}
+
+    或者经由微扰法，得到：
+    \begin{equation}
+    \frac{3}{a}F(a)+F^\prime(a)<0
+    \end{equation}
+
+\subsection{汤川势}
+
+  \section{$\alpha$ 粒子的散射}
+
+
+
+
+
     
-    \subsection{限制型三体运动}
-    $$L=\frac{1}{2}m\dot{\textbf{r}}^2+m\dot{\textbf{r}}\cdot(\Omega \times{\textbf{r}})-V_{eff}$$
-    采用转动参考系可以写出如上的拉氏量，其中：
-    $$V_{eff}=V_s(\textbf{r}_{sm})+V_e(\textbf{r}_{em})-\frac{1}{2}m\omega^2\textbf{r}_{cm}^2$$
-    其中有：
-    $$r_{sm}=\sqrt{r^2_{se}+r^2_{em}+2r_{se}r_{em}cos\theta},r_{cm}=\sqrt{r^2_{ce}+r^2_{em}+2r_{ce}r_{em}cos\theta}$$
-    注意，离心势能在两种模型下的不同：有心力模型中离心势能为$\frac{1}{2}m\omega^2r^2$但此时$\omega$和$r$并不独立；固定转速情况下的离心势能：$-\frac{1}{2}m\omega^2r^2$。上述有心势能其实是两个自由度，我们不妨认定这两个广义坐标分别为$r_{em}$和$\theta$。则有：
-    $$\frac{\partial V_{eff}}{\partial r}=\frac{\partial V_s}{\partial r_{sm}}\frac{r_{em}+r_{se}cos\theta}{r_{sm}}+\frac{\partial V_e}{\partial r_{em}}-m\omega^2(r_{em}+r_{ce}cos\theta)$$
-    $$\frac{\partial V_{eff}}{\partial \theta}=-\frac{\partial V_s}{\partial r_{sm}}\frac{r_{se}r_{em}sin\theta}{r_{sm}}+m\omega^2r_{em}r_{ce}sin\theta$$
-    关于拉格朗日点和潮汐的问题可以由上两个方程给出
     \subsection{散射}
     $$\textbf{F}=\frac{k}{r^2}\textbf{e}_r，k=\frac{q_1q_2}{4\pi\epsilon_0}$$
     将引力问题中所有的$GM_s$换成$-\frac{k}{\mu}$即可。改变参考系，我们得到瞄准距，会存在近心点和渐近线。实验时我们能看到入射方向与偏转角$\theta$（入射方向与出射方向之间的夹角），有：

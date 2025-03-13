@@ -26,7 +26,10 @@
 \contentsline {subsection}{\numberline {3.2.1}伯特兰定理}{16}{subsection.3.2.1}%
 \contentsline {section}{\numberline {3.3}天体运动}{17}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}第一、二、三宇宙速度}{17}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}限制型三体运动}{17}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}散射}{18}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4}小振动}{18}{section.3.4}%
-\contentsline {chapter}{\numberline {A}变分原理/Variational Principle}{19}{appendix.A}%
+\contentsline {section}{\numberline {3.4}潮汐}{18}{section.3.4}%
+\contentsline {section}{\numberline {3.5}圆轨道的稳定性}{18}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}汤川势}{18}{subsection.3.5.1}%
+\contentsline {section}{\numberline {3.6}$\alpha $ 粒子的散射}{18}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}散射}{18}{subsection.3.6.1}%
+\contentsline {section}{\numberline {3.7}小振动}{19}{section.3.7}%
+\contentsline {chapter}{\numberline {A}变分原理/Variational Principle}{20}{appendix.A}%
