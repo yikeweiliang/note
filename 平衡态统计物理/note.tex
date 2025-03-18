@@ -5,6 +5,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{titlesec}
 \usepackage{hyperref}
+\usepackage{dsfont}
 \usepackage{url} % 用于更好地格式化URL
 
 \titleformat{\section}[block]{\normalfont}{\thesection}{1em}{}
@@ -19,7 +20,6 @@
 \usepackage{amsmath}
 \usepackage{subfigure}
 \usepackage[graphicx]{realboxes}
-
 
 
 \setCJKmainfont{FangSong}%中文设置为仿宋
@@ -764,6 +764,90 @@ $*$ 顺磁体的案例：说明临界指数是普适的，甚至无关体系是�
 \end{align}
 
 第三个结论是，不可能通过有限的操作把温度降低到绝对零度。
+
+
+\chapter{系综/Ensemble}
+
+热学是唯象的，但是统计力学是基于概率的描述，来描述处于热平衡的体系。在热学中，描述一个系统一般使用的是其宏观态$E,V,N$，现在开始我们要开始关注体系的微观状态。我们致力于构建微观状态与宏观描述之间的关系（最简单的方式当然是构建每个粒子的牛顿运动模型，解的其运动方程从而得到宏观的状态，但这种方法显然不具有可操作性）。统计力学抛弃了这种方法，转而询问：系统处于这个微观态的概率是多少？从而来构建宏观微观的关系。
+
+如何给每个微观态的概率赋值是我们接下来要讨论的问题。
+
+\section{系综的定义}
+系综就是大量具有相同宏观条件但处于不同微观状态的系统的集合。（不过我们显然还没有说明微观状态该如何描述，所以这里仍然存在一些问题，不过它们的宏观系统状态参量$E,V,N$都相同）
+
+\begin{itemize}
+  \item 孤立系统，体系的$E,V,N$固定，对应微正则系综；
+  \item 恒温系统，体系的$T,V,N$固定，对应正则系综；（存在能量交换）
+  \item 体系的$T,\mu,V$固定，对应巨正则系综；（存在能量和粒子数交换）
+\end{itemize}
+
+在热力学极限$V\to \infty$下，三种统计系综完全等价。
+
+\section{微观态}
+\begin{itemize}
+\item 经典系统的微观态：只要得到$N$个粒子的动量$p$和坐标$q$，系统就可以被完全确定，因此$<q,p>$组成的$6N$维空间被称为相空间。（focus）
+\item 量子体系的微观态：理想量子气体（无相互作用），简化了假设。
+\item 单轴磁体的微观态，离散坐标系统。（碰一点）
+\end{itemize}
+
+\section{经典系统}
+如何确定概率在相空间中的分布函数？
+\begin{equation}
+  \rho(p,q)=\frac{1}{\mathds{N}}\frac{\mathrm{d}\mathds{N}}{\mathrm{d}\textbf{r}}
+\end{equation}
+
+对于相空间中的每一点，由于其表示了系统的状态，因此总是有一些东西是它们的函数（例如能量是$3N$个动量的函数），也就是说总是存在这样的函数：
+\begin{equation}
+  O=O(q,p)\end{equation}
+
+定义这种函数的系综平均为：
+\begin{equation}
+  [O]=\int\Pi_{i}\mathrm{d}p_i\mathrm{d}q_i\rho O(q,p)
+\end{equation}
+
+这就是可观测量的系综平均。问题在于，体系会进行演化，因此对于一个任意的概率分布，可观测量的数值是与时间相关的。要求体系处于平衡状态，我们就要求$O$独立于时间，因此$\rho_e$不显含时间。
+
+什么样的$\rho$满足这样的要求呢？这就需要考虑哈密顿方程：
+\begin{align}
+  \frac{\partial H}{\partial p_i}&=\dot{q}_i\\
+  -\frac{\partial H}{\partial q_i}&=\dot{p}_i
+\end{align}
+
+同时，系统还要满足$\rho$的连续性方程：
+\begin{equation}
+  \frac{\partial \rho}{\partial t}+\nabla\cdot(\rho\textbf{v})=0
+\end{equation}
+
+展开即：
+\begin{align}
+  \frac{\partial \rho}{\partial t}+\sum_{i=1}^{3N}\left(\frac{\partial}{\partial q_i}(\rho \dot{q_i})+\frac{\partial}{\partial p_i}(\rho \dot{p_i})\right)&=0\\
+  \frac{\partial \rho}{\partial t}+\sum_{i=1}^{3N}\left(\dot{q_i}\frac{\partial\rho}{\partial q_i}+\dot{p_i}\frac{\partial \rho}{\partial p_i}\right)&=0\\
+  \frac{\mathrm{d}\rho}{\mathrm{d}t}&=0\\
+  \frac{\partial \rho}{\partial t}+[\rho,H]&=0
+\end{align}
+
+即随体导数等于零。因此相空间的运动像是不可压缩的流体的运动。
+
+当$\rho$不显含时间时，就应该有$[\rho,H]=0$（显然如果$\rho=f(H)$则该方程自动成立），这是刘维尔定理。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
